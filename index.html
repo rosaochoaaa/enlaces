@@ -125,10 +125,19 @@
 
   footer { text-align: center; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 
+
+  @keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+  .link { animation: bob 4s ease-in-out infinite; }
+  li:nth-child(3) .link { animation-delay: -.8s; }
+  li:nth-child(4) .link { animation-delay: -1.6s; }
+  li:nth-child(5) .link { animation-delay: -2.4s; }
+  .link.featured { animation-duration: 3.4s; }
+  .go { animation: nudge 2.4s ease-in-out infinite; }
+  @keyframes nudge { 0%,100% { translate: 0 0; } 50% { translate: 3px 0; } }
   @media (prefers-reduced-motion: reduce) {
     .b1, .b2, .b3, .b4 { animation-duration: 40s; }
     .ring::before, .ring::after { animation: none; }
-    .link, .go { transition: none; }
+    .link, .go { transition: none; animation: none; }
   }
 </style>
 </head>
